@@ -43,7 +43,7 @@ public class GHI98_SupportForCredentialsIT {
     final String uName = System.getProperty("usernameForTest");
     final String repo = System.getProperty("repoForTest");
     final String pipelineScript = "node {\n" +
-        "    checkout([$class: 'GitSCM', branches: [[name: '*/ready/**']], doGenerateSubmoduleConfigurations: false, extensions: [pretestedIntegration(gitIntegrationStrategy: squash(), integrationBranch: 'master', repoName: 'origin')], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'pipCredentials', url: '%repoForTest']]])\n" +
+        "    checkout([$class: 'GitSCM', branches: [[name: '*/ready/**']], extensions: [pretestedIntegration(gitIntegrationStrategy: squash(), integrationBranch: 'master', repoName: 'origin')], userRemoteConfigs: [[credentialsId: 'pipCredentials', url: '%repoForTest']]])\n" +
         "    pretestedIntegrationPublisher()\n" +
         "    echo \"Ohoy we've got success!\"\n" +
         "}";

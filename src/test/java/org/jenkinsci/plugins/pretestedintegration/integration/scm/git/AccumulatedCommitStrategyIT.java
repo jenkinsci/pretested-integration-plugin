@@ -257,7 +257,7 @@ public class AccumulatedCommitStrategyIT {
                 "    stages {\n" +
                 "        stage(\"checkout\") {\n" +
                 "            steps {\n" +
-                "                checkout([$class: 'GitSCM', branches: [[name: '*/ready/**']], doGenerateSubmoduleConfigurations: false, extensions: [pretestedIntegration(gitIntegrationStrategy: accumulated(), integrationBranch: 'master', repoName: 'origin')], submoduleCfg: [], userRemoteConfigs: [[url: '%URL']]])\n" +
+                "                checkout([$class: 'GitSCM', branches: [[name: '*/ready/**']], extensions: [pretestedIntegration(gitIntegrationStrategy: accumulated(), integrationBranch: 'master', repoName: 'origin')], userRemoteConfigs: [[url: '%URL']]])\n" +
                 "            }\n" +
                 "        }\n" +
                 "        stage(\"publish\") {\n" +

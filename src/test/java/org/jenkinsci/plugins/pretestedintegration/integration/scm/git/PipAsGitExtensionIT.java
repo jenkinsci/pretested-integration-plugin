@@ -106,9 +106,7 @@ public class PipAsGitExtensionIT {
                 "node {",
                 "checkout([$class: 'GitSCM'," +
                         " branches: [[name: '*/ready/**']]," +
-                        " doGenerateSubmoduleConfigurations: false," +
                         " extensions: [pretestedIntegration(gitIntegrationStrategy: squash(), integrationBranch: 'master', repoName: 'origin')]," +
-                        " submoduleCfg: []," +
                         " userRemoteConfigs: [[url: '" + "file://" + repo.getDirectory().getAbsolutePath() + "']]])",
                 "pretestedIntegrationPublisher()",
                 "}"), "\n"), false);
